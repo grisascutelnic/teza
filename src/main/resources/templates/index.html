@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,54 +18,92 @@
     </div>
     <main class="dashboard-main">
         <div class="activities-outer">
-            <h2 class="section-title">Activități simple recente</h2>
+            <h2 class="section-title">Recent Activities</h2>
             <div class="activities-grid">
                 <div class="activity-card">
-                    <div class="activity-title">Cros Parcului Central</div>
-                    <div class="activity-meta">Înscris la 09:00 • Public</div>
-                    <div class="activity-desc">Alergare matinală în parc, deschisă tuturor.</div>
+                    <div class="activity-title">Central Park Run</div>
+                    <div class="activity-meta">Registered at 09:00 • Public</div>
+                    <div class="activity-desc">Morning jog in the park, open to everyone.</div>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-title">Workshop pictură</div>
-                    <div class="activity-meta">Astăzi 14:30 • Public</div>
-                    <div class="activity-desc">Învață bazele picturii moderne, adu materiale dacă ai.</div>
+                    <div class="activity-title">Painting Workshop</div>
+                    <div class="activity-meta">Today 14:30 • Public</div>
+                    <div class="activity-desc">Learn the basics of modern painting, bring materials if you have.</div>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-title">Club de lectură</div>
-                    <div class="activity-meta">La 18:00 • Public</div>
-                    <div class="activity-desc">Discutăm "Sunt o babă comunistă" de Dan Lungu.</div>
+                    <div class="activity-title">Book Club</div>
+                    <div class="activity-meta">At 18:00 • Public</div>
+                    <div class="activity-desc">Discussing contemporary literature and classic novels.</div>
                 </div>
                 <div class="activity-card">
-                    <div class="activity-title">Eco-voluntariat</div>
-                    <div class="activity-meta">Sâmbătă • Public</div>
-                    <div class="activity-desc">Adunăm gunoaie la marginea pădurii. Toți sunt bineveniți.</div>
+                    <div class="activity-title">Eco Volunteering</div>
+                    <div class="activity-meta">Saturday • Public</div>
+                    <div class="activity-desc">Cleaning up at the forest edge. Everyone is welcome.</div>
                 </div>
                 <!-- ... more simple activities ... -->
             </div>
             <div class="fade-bottom"></div>
-            <button class="more-activities-btn">Mai multe activități</button>
+            <button class="more-activities-btn">More activities</button>
         </div>
 
         <div class="activities-outer premium">
-            <h2 class="section-title"><span class="premium-badge">Premium</span> Activități premium recente</h2>
+            <h2 class="section-title"><span class="premium-badge">Premium</span> Premium Activities</h2>
             <div class="activities-grid">
                 <div class="activity-card premium-card">
-                    <div class="activity-title">Tabără IT Avansați</div>
-                    <div class="activity-meta">Începe în 2 zile • Premium</div>
-                    <div class="activity-desc">Bootcamp exclusiv: design, coding, leadership.</div>
+                    <div class="activity-title">Advanced IT Bootcamp</div>
+                    <div class="activity-meta">Starts in 2 days • Premium</div>
+                    <div class="activity-desc">Exclusive bootcamp: design, coding, leadership.</div>
                 </div>
                 <div class="activity-card premium-card">
                     <div class="activity-title">Networking & Gala</div>
-                    <div class="activity-meta">Mâine • Premium</div>
-                    <div class="activity-desc">Eveniment restrâns pentru membrii premium și parteneri.</div>
+                    <div class="activity-meta">Tomorrow • Premium</div>
+                    <div class="activity-desc">Exclusive event for premium members and partners.</div>
                 </div>
                 <!-- ... more premium activities ... -->
             </div>
             <div class="fade-bottom"></div>
-            <button class="more-activities-btn">Mai multe activități premium</button>
+            <button class="more-activities-btn">More premium activities</button>
         </div>
 
-        <button class="fab-create-activity">＋ Creează activitate</button>
+        <div class="activities-outer premium">
+            <h2 class="section-title"><span class="premium-badge">Premium</span> Premium Activities</h2>
+            <div class="activities-grid">
+                <div class="activity-card premium-card">
+                    <div class="activity-title">Advanced IT Bootcamp</div>
+                    <div class="activity-meta">Starts in 2 days • Premium</div>
+                    <div class="activity-desc">Exclusive bootcamp: design, coding, leadership.</div>
+                </div>
+                <div class="activity-card premium-card">
+                    <div class="activity-title">Networking & Gala</div>
+                    <div class="activity-meta">Tomorrow • Premium</div>
+                    <div class="activity-desc">Exclusive event for premium members and partners.</div>
+                </div>
+                <!-- ... more premium activities ... -->
+            </div>
+            <div class="fade-bottom"></div>
+            <button class="more-activities-btn">More premium activities</button>
+        </div>
+
+        <div class="activities-outer premium">
+            <h2 class="section-title"><span class="premium-badge">Premium</span> Premium Activities</h2>
+            <div class="activities-grid">
+                <div class="activity-card premium-card">
+                    <div class="activity-title">Advanced IT Bootcamp</div>
+                    <div class="activity-meta">Starts in 2 days • Premium</div>
+                    <div class="activity-desc">Exclusive bootcamp: design, coding, leadership.</div>
+                </div>
+                <div class="activity-card premium-card">
+                    <div class="activity-title">Networking & Gala</div>
+                    <div class="activity-meta">Tomorrow • Premium</div>
+                    <div class="activity-desc">Exclusive event for premium members and partners.</div>
+                </div>
+                <!-- ... more premium activities ... -->
+            </div>
+            <div class="fade-bottom"></div>
+            <button class="more-activities-btn">More premium activities</button>
+        </div>
+
+        <button class="fab-create-activity">＋ Create Activity</button>
 
     </main>
     <script th:src="@{/js/home.js}"></script>

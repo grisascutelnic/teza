@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 <div th:fragment="navbar">
     <header class="site-header">
         <div class="container nav-container">
             <a class="brand" th:href="@{/}">Project</a>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Deschide meniul">
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -14,17 +14,17 @@
 
             <nav class="nav" id="mainNav">
                 <a th:href="@{/}" class="nav-link">Home</a>
-                <a th:href="@{/activitati}" class="nav-link">Activități</a>
-                <a th:href="@{/profil}" class="nav-link">Profil</a>
-                <a th:href="@{/calendar}" class="nav-link">Calendar personal</a>
-                <a th:href="@{/chat}" class="nav-link">Chat-uri</a>
-                <a th:href="@{/harta}" class="nav-link">Harta de activități</a>
+                <a th:href="@{/activitati}" class="nav-link">Activities</a>
+                <a th:href="@{/profil}" class="nav-link">Profile</a>
+                <a th:href="@{/calendar}" class="nav-link">My Calendar</a>
+                <a th:href="@{/chat}" class="nav-link">Chats</a>
+                <a th:href="@{/harta}" class="nav-link">Activity Map</a>
                 <div class="nav-actions">
                     <button class="icon-btn" id="notificationsBtn" aria-haspopup="true" aria-expanded="false">
                         <span class="material-icon" aria-hidden="true">🔔</span>
                         <span class="badge" id="notifBadge">3</span>
                     </button>
-                    <a th:href="@{/login}" class="btn btn-primary">Logare</a>
+                    <a th:href="@{/login}" class="btn btn-primary">Login</a>
                 </div>
             </nav>
         </div>
@@ -32,29 +32,29 @@
         <!-- Notifications Dropdown Panel -->
         <div class="notifications-panel" id="notificationsPanel" aria-hidden="true">
             <div class="panel-header">
-                <h3>Notificări</h3>
-                <button class="icon-btn" id="closeNotif" aria-label="Închide notificări">✕</button>
+                <h3>Notifications</h3>
+                <button class="icon-btn" id="closeNotif" aria-label="Close notifications">✕</button>
             </div>
             <ul class="notif-list">
                 <li class="notif-item is-unread">
-                    <div class="notif-title">Activitate nouă: Workshop pictură</div>
-                    <div class="notif-meta">Acum 5 minute</div>
+                    <div class="notif-title">New activity: Painting Workshop</div>
+                    <div class="notif-meta">5 minutes ago</div>
                 </li>
                 <li class="notif-item is-unread">
-                    <div class="notif-title">Ai fost acceptat la Cros Parcului Central</div>
-                    <div class="notif-meta">Acum 30 minute</div>
+                    <div class="notif-title">You were accepted to Central Park Run</div>
+                    <div class="notif-meta">30 minutes ago</div>
                 </li>
                 <li class="notif-item is-unread">
-                    <div class="notif-title">Mesaj nou de la Ana Popescu</div>
-                    <div class="notif-meta">Acum 1 oră</div>
+                    <div class="notif-title">New message from Sarah Johnson</div>
+                    <div class="notif-meta">1 hour ago</div>
                 </li>
                 <li class="notif-item">
-                    <div class="notif-title">Reminder: Club de lectură diseară</div>
-                    <div class="notif-meta">Acum 3 ore</div>
+                    <div class="notif-title">Reminder: Book club tonight</div>
+                    <div class="notif-meta">3 hours ago</div>
                 </li>
                 <li class="notif-item">
-                    <div class="notif-title">Activitatea ta "Fotbal" a fost publicată</div>
-                    <div class="notif-meta">Ieri</div>
+                    <div class="notif-title">Your activity "Soccer" has been published</div>
+                    <div class="notif-meta">Yesterday</div>
                 </li>
             </ul>
         </div>
