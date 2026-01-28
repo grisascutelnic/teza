@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities | JoinUs</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <section class="activities-section" id="activities">
+        <div class="container">
+            <h1 class="section-title">All Activities</h1>
+            <p class="section-subtitle">Browse upcoming activities and join your favorites.</p>
+
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="card-image wellness-image"></div>
+                    <div class="card-content">
+                        <div class="card-category wellness">Wellness</div>
+                        <h3 class="card-title">Morning Yoga in the Park</h3>
+                        <p class="card-description">Start your day with a peaceful yoga session surrounded by nature. All levels welcome.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Today, 8:00 AM</span>
+                            <span class="tag">📍 Central Park</span>
+                            <span class="tag">👥 5 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image outdoor-image"></div>
+                    <div class="card-content">
+                        <div class="card-category outdoor">Outdoor</div>
+                        <h3 class="card-title">Weekend Hiking Adventure</h3>
+                        <p class="card-description">Join us for a scenic hike through the mountain trails. Bring water and comfortable shoes.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Saturday, 9:00 AM</span>
+                            <span class="tag">📍 Mountain Trail</span>
+                            <span class="tag">👥 8 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card premium">
+                    <div class="premium-badge">Premium</div>
+                    <div class="card-image wellness-image"></div>
+                    <div class="card-content">
+                        <div class="card-category wellness">Wellness</div>
+                        <h3 class="card-title">Meditation & Mindfulness Workshop</h3>
+                        <p class="card-description">Deep dive into mindfulness practices with guided meditation and breathing exercises.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Sunday, 10:00 AM</span>
+                            <span class="tag">📍 Community Center</span>
+                            <span class="tag">👥 3 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image social-image"></div>
+                    <div class="card-content">
+                        <div class="card-category social">Social</div>
+                        <h3 class="card-title">Coffee & Book Club</h3>
+                        <p class="card-description">Discuss this month's book over coffee. This week: "The Alchemist" by Paulo Coelho.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Friday, 6:00 PM</span>
+                            <span class="tag">📍 Local Café</span>
+                            <span class="tag">👥 12 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

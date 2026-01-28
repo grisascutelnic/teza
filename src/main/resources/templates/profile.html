@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body class="profile-body">
+    <!-- Navigation Bar -->
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <!-- Notifications Dropdown -->
+    <div class="notification-dropdown" id="notificationDropdown">
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>New activity nearby</strong>
+                <p>Yoga in the park starts in 2 hours</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Someone joined your activity</strong>
+                <p>Sarah joined "Morning Run"</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Reminder</strong>
+                <p>Your hiking trip is tomorrow</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>New message</strong>
+                <p>You have a new message from John</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Activity updated</strong>
+                <p>The time for "Beach Volleyball" has changed</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>New follower</strong>
+                <p>Maria started following you</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Event reminder</strong>
+                <p>Your cooking class starts in 1 hour</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Activity cancelled</strong>
+                <p>The "Photography Walk" has been cancelled</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Cover -->
+    <section class="profile-cover">
+        <div class="profile-cover-art"></div>
+        <div class="container">
+            <div class="profile-hero-card">
+                <div>
+                    <div class="profile-identity">
+                        <div class="profile-avatar">AS</div>
+                        <div>
+                            <div class="profile-role">Coordinator</div>
+                            <h1 class="profile-name">Andreea Stoica</h1>
+                            <p class="profile-tagline">
+                                Lider comunitar concentrat pe educatie, mediu si proiecte locale.
+                            </p>
+                            <div class="profile-actions">
+                                <button class="btn btn-primary">Editeaza profil</button>
+                                <button class="btn btn-secondary">Trimite mesaj</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="info-row">
+                            <span class="info-label">Email</span>
+                            <span>andreea.stoica@email.com</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Telefon</span>
+                            <span>+40 700 000 000</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Locatie</span>
+                            <span>Bucuresti</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Interese</span>
+                            <span>Educatie, mentoring, voluntariat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Activitati create</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">38</span>
+                        <span class="stat-label">Participanti invitati</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">4.9</span>
+                        <span class="stat-label">Rating mediu</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">105h</span>
+                        <span class="stat-label">Voluntariat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-shell">
+                <div class="profile-layout">
+                    <div class="profile-column">
+                        <div class="profile-card">
+                            <div class="profile-card-header">
+                                <div>
+                                    <h2 class="section-title">Informatii personale</h2>
+                                    <p class="section-subtitle">Detalii despre profil si competente.</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm">Actualizeaza</button>
+                            </div>
+                            <div class="profile-info">
+                                <div class="info-row">
+                                    <span class="info-label">Educatie</span>
+                                    <span>Master Management ONG</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Competente</span>
+                                    <span>Fundraising, facilitare, leadership</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Limbi</span>
+                                    <span>Romana, Engleza, Franceza</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Disponibilitate</span>
+                                    <span>5h / saptamana</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card">
+                            <h2 class="section-title">Badge-uri</h2>
+                            <p class="section-subtitle">Recunoasteri obtinute in comunitate.</p>
+                            <div class="badge-grid">
+                                <span class="badge-pill">Lider comunitar</span>
+                                <span class="badge-pill">Mentor de incredere</span>
+                                <span class="badge-pill">Impact local</span>
+                                <span class="badge-pill">100+ ore voluntariat</span>
+                                <span class="badge-pill">Creativitate</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-card">
+                            <h2 class="section-title">Feedback / Rating</h2>
+                            <p class="section-subtitle">Evaluari recente de la participanti.</p>
+                            <div class="review-list">
+                                <div class="review-item">
+                                    <div class="review-text">Rating general: 4.9 / 5</div>
+                                    <div class="review-meta">
+                                        <span>128 evaluari</span>
+                                        <span>Ultima acum 2 zile</span>
+                                    </div>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-text">
+                                        Organizare impecabila si o energie care inspira toata echipa.
+                                    </div>
+                                    <div class="review-meta">
+                                        <span>Ioana R.</span>
+                                        <span>Atelier eco</span>
+                                    </div>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-text">
+                                        Comunicare clara si focus pe rezultate reale pentru comunitate.
+                                    </div>
+                                    <div class="review-meta">
+                                        <span>Vlad M.</span>
+                                        <span>Maraton mentorat</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-column">
+                        <div class="profile-card">
+                            <div class="profile-card-header">
+                                <div>
+                                    <h2 class="section-title">Activitati create</h2>
+                                    <p class="section-subtitle">Proiecte initiate si coordonate.</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm">Vezi tot</button>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <span class="timeline-dot"></span>
+                                    <div class="timeline-content">
+                                        <strong>Atelier eco pentru liceeni</strong>
+                                        <p>12 martie · 34 participanti</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="timeline-dot"></span>
+                                    <div class="timeline-content">
+                                        <strong>Ziua voluntarului urban</strong>
+                                        <p>02 aprilie · 48 participanti</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="timeline-dot"></span>
+                                    <div class="timeline-content">
+                                        <strong>Maraton de mentorat</strong>
+                                        <p>20 aprilie · 26 participanti</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card">
+                            <div class="profile-card-header">
+                                <div>
+                                    <h2 class="section-title">Activitati la care participa</h2>
+                                    <p class="section-subtitle">Evenimente active in saptamana curenta.</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm">Calendar</button>
+                            </div>
+                            <div class="highlight-list">
+                                <div class="highlight-item">
+                                    <span class="highlight-label">Mentorat pentru liceeni</span>
+                                    <span>Joi, 19:00</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-label">Clean-up in parc</span>
+                                    <span>Sambata, 09:00</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-label">Club de lectura</span>
+                                    <span>Duminica, 17:00</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-label">Sprint fundraising</span>
+                                    <span>Marti, 18:30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-card compact">
+                            <h2 class="section-title">Status rapid</h2>
+                            <p class="section-subtitle">Informatii scurte pentru echipa.</p>
+                            <div class="profile-stack">
+                                <div class="highlight-item">
+                                    <span class="highlight-label">Urmator eveniment</span>
+                                    <span>Clean-up in parc</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-label">Disponibilitate</span>
+                                    <span>Vineri, 16:00</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-label">Mesaje noi</span>
+                                    <span>3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

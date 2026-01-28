@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Calendar | JoinUs</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="profile-body">
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <section class="calendar-hero">
+        <div class="container">
+            <div class="calendar-hero-card">
+                <div>
+                    <p class="calendar-kicker">Personal Calendar</p>
+                    <h1 class="calendar-title">Your schedule, beautifully organized.</h1>
+                    <p class="calendar-subtitle">Highlighted days show upcoming activities and reminders.</p>
+                </div>
+                <div class="calendar-legend">
+                    <span class="legend-item"><span class="legend-dot legend-dot-primary"></span>Activity</span>
+                    <span class="legend-item"><span class="legend-dot legend-dot-premium"></span>Premium</span>
+                    <span class="legend-item"><span class="legend-dot legend-dot-reminder"></span>Reminder</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calendar-section">
+        <div class="container calendar-layout">
+            <div class="calendar-card">
+                <div class="calendar-header">
+                    <button class="calendar-nav-btn" aria-label="Previous month">‹</button>
+                    <h2>February 2026</h2>
+                    <button class="calendar-nav-btn" aria-label="Next month">›</button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-weekday">Mon</div>
+                    <div class="calendar-weekday">Tue</div>
+                    <div class="calendar-weekday">Wed</div>
+                    <div class="calendar-weekday">Thu</div>
+                    <div class="calendar-weekday">Fri</div>
+                    <div class="calendar-weekday">Sat</div>
+                    <div class="calendar-weekday">Sun</div>
+
+                    <div class="calendar-day muted">27</div>
+                    <div class="calendar-day muted">28</div>
+                    <div class="calendar-day muted">29</div>
+                    <div class="calendar-day muted">30</div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+
+                    <div class="calendar-day event">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day reminder">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day premium">9</div>
+                    <div class="calendar-day">10</div>
+
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day event">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day">17</div>
+
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day reminder">19</div>
+                    <div class="calendar-day">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day event">22</div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day premium">28</div>
+                    <div class="calendar-day muted">1</div>
+                    <div class="calendar-day muted">2</div>
+                    <div class="calendar-day muted">3</div>
+                </div>
+            </div>
+
+            <aside class="calendar-side">
+                <div class="profile-card">
+                    <h2 class="section-title">Upcoming</h2>
+                    <div class="calendar-list">
+                        <div class="calendar-item">
+                            <div class="calendar-item-date">
+                                <span>Feb</span>
+                                <strong>4</strong>
+                            </div>
+                            <div>
+                                <h3>Morning Yoga</h3>
+                                <p>Central Park • 8:00 AM</p>
+                            </div>
+                            <span class="calendar-chip">Activity</span>
+                        </div>
+                        <div class="calendar-item premium">
+                            <div class="calendar-item-date">
+                                <span>Feb</span>
+                                <strong>9</strong>
+                            </div>
+                            <div>
+                                <h3>Mindfulness Workshop</h3>
+                                <p>Community Center • 6:00 PM</p>
+                            </div>
+                            <span class="calendar-chip">Premium</span>
+                        </div>
+                        <div class="calendar-item reminder">
+                            <div class="calendar-item-date">
+                                <span>Feb</span>
+                                <strong>19</strong>
+                            </div>
+                            <div>
+                                <h3>Reminder</h3>
+                                <p>Send invites for Hiking Trip</p>
+                            </div>
+                            <span class="calendar-chip">Reminder</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

@@ -1,66 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
 <body>
-<div th:fragment="navbar">
-    <header class="site-header">
-        <div class="container nav-container">
-            <a class="brand" th:href="@{/}">Project</a>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Open menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <!-- Navigation Bar Fragment -->
+    <header class="navbar" th:fragment="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="14" fill="#6BCB77" opacity="0.8"/>
+                    <path d="M16 10L20 16L16 22L12 16L16 10Z" fill="white"/>
+                </svg>
+                <span>JoinUs</span>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
             </button>
-
-            <nav class="nav" id="mainNav">
-                <a th:href="@{/}" class="nav-link">Home</a>
-                <a th:href="@{/activitati}" class="nav-link">Activities</a>
-                <a th:href="@{/profil}" class="nav-link">Profile</a>
-                <a th:href="@{/calendar}" class="nav-link">My Calendar</a>
-                <a th:href="@{/chat}" class="nav-link">Chats</a>
-                <a th:href="@{/harta}" class="nav-link">Activity Map</a>
-                <div class="nav-actions">
-                    <button class="icon-btn" id="notificationsBtn" aria-haspopup="true" aria-expanded="false">
-                        <span class="material-icon" aria-hidden="true">🔔</span>
-                        <span class="badge" id="notifBadge">3</span>
+            <nav class="nav-links" id="navLinks">
+                <a th:href="@{/home}" class="nav-link">Home</a>
+                <a th:href="@{/activities}" class="nav-link">Activities</a>
+                <a th:href="@{/profile}" class="nav-link">Profile</a>
+                <a th:href="@{/calendar}" class="nav-link">Personal Calendar</a>
+                <a href="#chats" class="nav-link">Chats</a>
+                <a href="#map" class="nav-link">Activity Map</a>
+                <a href="#forum" class="nav-link">Forum</a>
+                <div class="notifications-wrapper">
+                    <button type="button" class="nav-link notification-btn" id="notificationBtn">
+                        Notifications
+                        <span class="notification-badge">3</span>
                     </button>
-                    <a th:href="@{/login}" class="btn btn-primary">Login</a>
                 </div>
+                <a href="#login" class="nav-link login-btn">Login</a>
             </nav>
         </div>
-        
-        <!-- Notifications Dropdown Panel -->
-        <div class="notifications-panel" id="notificationsPanel" aria-hidden="true">
-            <div class="panel-header">
-                <h3>Notifications</h3>
-                <button class="icon-btn" id="closeNotif" aria-label="Close notifications">✕</button>
-            </div>
-            <ul class="notif-list">
-                <li class="notif-item is-unread">
-                    <div class="notif-title">New activity: Painting Workshop</div>
-                    <div class="notif-meta">5 minutes ago</div>
-                </li>
-                <li class="notif-item is-unread">
-                    <div class="notif-title">You were accepted to Central Park Run</div>
-                    <div class="notif-meta">30 minutes ago</div>
-                </li>
-                <li class="notif-item is-unread">
-                    <div class="notif-title">New message from Sarah Johnson</div>
-                    <div class="notif-meta">1 hour ago</div>
-                </li>
-                <li class="notif-item">
-                    <div class="notif-title">Reminder: Book club tonight</div>
-                    <div class="notif-meta">3 hours ago</div>
-                </li>
-                <li class="notif-item">
-                    <div class="notif-title">Your activity "Soccer" has been published</div>
-                    <div class="notif-meta">Yesterday</div>
-                </li>
-            </ul>
-        </div>
     </header>
-</div>
 </body>
 </html>
-
 

@@ -3,127 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Dashboard</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Plan. Share. Experience together.</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-    <div th:replace="fragments/navbar.html :: navbar"></div>
-    <div class="app-bg">
-        <div class="bg-shape bg-blue"></div>
-        <div class="bg-shape bg-purple"></div>
-        <div class="bg-shape bg-cyan"></div>
+    <!-- Navigation Bar -->
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <!-- Notifications Dropdown (moved to body to avoid navbar clipping) -->
+    <div class="notification-dropdown" id="notificationDropdown">
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>New activity nearby</strong>
+                <p>Yoga in the park starts in 2 hours</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Someone joined your activity</strong>
+                <p>Sarah joined "Morning Run"</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Reminder</strong>
+                <p>Your hiking trip is tomorrow</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>New message</strong>
+                <p>You have a new message from John</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Activity updated</strong>
+                <p>The time for "Beach Volleyball" has changed</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>New follower</strong>
+                <p>Maria started following you</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Event reminder</strong>
+                <p>Your cooking class starts in 1 hour</p>
+            </div>
+        </div>
+        <div class="notification-item">
+            <div class="notification-content">
+                <strong>Activity cancelled</strong>
+                <p>The "Photography Walk" has been cancelled</p>
+            </div>
+        </div>
     </div>
-    <main class="dashboard-main">
-        <div class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-main-title">Discover Amazing Activities</h1>
-                <p class="hero-subtitle">Join the community and stay active together</p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Plan. Share. Experience together.</h1>
+            <p class="hero-subtitle">Connect with your community through shared activities. Discover local events, create your own, and build meaningful connections.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('activities')">Explore Activities</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('create')">Create Activity</button>
             </div>
         </div>
-        <div class="activities-outer">
-            <h2 class="section-title">⚡ Recent Activities</h2>
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-title">Central Park Run</div>
-                    <div class="activity-meta">Registered at 09:00 • Public</div>
-                    <div class="activity-desc">Morning jog in the park, open to everyone.</div>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-title">Painting Workshop</div>
-                    <div class="activity-meta">Today 14:30 • Public</div>
-                    <div class="activity-desc">Learn the basics of modern painting, bring materials if you have.</div>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-title">Book Club</div>
-                    <div class="activity-meta">At 18:00 • Public</div>
-                    <div class="activity-desc">Discussing contemporary literature and classic novels.</div>
-                </div>
-                <div class="activity-card">
-                    <div class="activity-title">Eco Volunteering</div>
-                    <div class="activity-meta">Saturday • Public</div>
-                    <div class="activity-desc">Cleaning up at the forest edge. Everyone is welcome.</div>
-                </div>
-                <!-- ... more simple activities ... -->
-            </div>
-            <div class="fade-bottom"></div>
-            <button class="more-activities-btn">More activities</button>
-        </div>
+    </section>
 
-        <div class="activities-outer premium">
-            <h2 class="section-title"><span class="premium-badge">Premium</span> Premium Activities</h2>
-            <div class="activities-grid">
-                <div class="activity-card premium-card">
-                    <div class="activity-title">Advanced IT Bootcamp</div>
-                    <div class="activity-meta">Starts in 2 days • Premium</div>
-                    <div class="activity-desc">Exclusive bootcamp: design, coding, leadership.</div>
-                </div>
-                <div class="activity-card premium-card">
-                    <div class="activity-title">Networking & Gala</div>
-                    <div class="activity-meta">Tomorrow • Premium</div>
-                    <div class="activity-desc">Exclusive event for premium members and partners.</div>
-                </div>
-                <!-- ... more premium activities ... -->
-            </div>
-            <div class="fade-bottom"></div>
-            <button class="more-activities-btn">More premium activities</button>
-        </div>
-
-        <div class="activities-outer premium">
-            <h2 class="section-title"><span class="premium-badge">Premium</span> Premium Activities</h2>
-            <div class="activities-grid">
-                <div class="activity-card premium-card">
-                    <div class="activity-title">Advanced IT Bootcamp</div>
-                    <div class="activity-meta">Starts in 2 days • Premium</div>
-                    <div class="activity-desc">Exclusive bootcamp: design, coding, leadership.</div>
-                </div>
-                <div class="activity-card premium-card">
-                    <div class="activity-title">Networking & Gala</div>
-                    <div class="activity-meta">Tomorrow • Premium</div>
-                    <div class="activity-desc">Exclusive event for premium members and partners.</div>
-                </div>
-                <!-- ... more premium activities ... -->
-            </div>
-            <div class="fade-bottom"></div>
-            <button class="more-activities-btn">More premium activities</button>
-        </div>
-
-        <div class="activities-outer premium">
-            <h2 class="section-title"><span class="premium-badge">Premium</span> Premium Activities</h2>
-            <div class="activities-grid">
-                <div class="activity-card premium-card">
-                    <div class="activity-title">Advanced IT Bootcamp</div>
-                    <div class="activity-meta">Starts in 2 days • Premium</div>
-                    <div class="activity-desc">Exclusive bootcamp: design, coding, leadership.</div>
-                </div>
-                <div class="activity-card premium-card">
-                    <div class="activity-title">Networking & Gala</div>
-                    <div class="activity-meta">Tomorrow • Premium</div>
-                    <div class="activity-desc">Exclusive event for premium members and partners.</div>
-                </div>
-                <!-- ... more premium activities ... -->
-            </div>
-            <div class="fade-bottom"></div>
-            <button class="more-activities-btn">More premium activities</button>
-        </div>
-
-        <button class="fab-create-activity">＋ Create Activity</button>
-
-    </main>
-    <footer class="footer">
+    <!-- Recent Activities Section -->
+    <section class="activities-section" id="activities">
         <div class="container">
-            <p class="footer-text">© 2024 Project. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#" class="footer-link">Privacy</a>
-                <a href="#" class="footer-link">Terms</a>
-                <a href="#" class="footer-link">Contact</a>
+            <h2 class="section-title">Recent Activities</h2>
+            <div class="activities-grid" id="activitiesGrid">
+                <!-- Simple Activity Cards -->
+                <div class="activity-card">
+                    <div class="card-image wellness-image"></div>
+                    <div class="card-content">
+                        <div class="card-category wellness">Wellness</div>
+                        <h3 class="card-title">Morning Yoga in the Park</h3>
+                        <p class="card-description">Start your day with a peaceful yoga session surrounded by nature. All levels welcome.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Today, 8:00 AM</span>
+                            <span class="tag">📍 Central Park</span>
+                            <span class="tag">👥 5 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image outdoor-image"></div>
+                    <div class="card-content">
+                        <div class="card-category outdoor">Outdoor</div>
+                        <h3 class="card-title">Weekend Hiking Adventure</h3>
+                        <p class="card-description">Join us for a scenic hike through the mountain trails. Bring water and comfortable shoes.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Saturday, 9:00 AM</span>
+                            <span class="tag">📍 Mountain Trail</span>
+                            <span class="tag">👥 8 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card premium">
+                    <div class="premium-badge">Premium</div>
+                    <div class="card-image wellness-image"></div>
+                    <div class="card-content">
+                        <div class="card-category wellness">Wellness</div>
+                        <h3 class="card-title">Meditation & Mindfulness Workshop</h3>
+                        <p class="card-description">Deep dive into mindfulness practices with guided meditation and breathing exercises.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Sunday, 10:00 AM</span>
+                            <span class="tag">📍 Community Center</span>
+                            <span class="tag">👥 3 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image social-image"></div>
+                    <div class="card-content">
+                        <div class="card-category social">Social</div>
+                        <h3 class="card-title">Coffee & Book Club</h3>
+                        <p class="card-description">Discuss this month's book over coffee. This week: "The Alchemist" by Paulo Coelho.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Friday, 6:00 PM</span>
+                            <span class="tag">📍 Local Café</span>
+                            <span class="tag">👥 12 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image outdoor-image"></div>
+                    <div class="card-content">
+                        <div class="card-category outdoor">Outdoor</div>
+                        <h3 class="card-title">Beach Volleyball</h3>
+                        <p class="card-description">Fun and friendly beach volleyball game. All skill levels welcome!</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Saturday, 2:00 PM</span>
+                            <span class="tag">📍 Sunset Beach</span>
+                            <span class="tag">👥 6 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card premium">
+                    <div class="premium-badge">Premium</div>
+                    <div class="card-image wellness-image"></div>
+                    <div class="card-content">
+                        <div class="card-category wellness">Wellness</div>
+                        <h3 class="card-title">Cooking Class: Italian Cuisine</h3>
+                        <p class="card-description">Learn to make authentic pasta from scratch with a professional chef.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Sunday, 4:00 PM</span>
+                            <span class="tag">📍 Culinary Studio</span>
+                            <span class="tag">👥 2 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image social-image"></div>
+                    <div class="card-content">
+                        <div class="card-category social">Social</div>
+                        <h3 class="card-title">Photography Walk</h3>
+                        <p class="card-description">Explore the city through your lens. Share tips and capture beautiful moments together.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Saturday, 11:00 AM</span>
+                            <span class="tag">📍 Downtown Area</span>
+                            <span class="tag">👥 10 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image outdoor-image"></div>
+                    <div class="card-content">
+                        <div class="card-category outdoor">Outdoor</div>
+                        <h3 class="card-title">Cycling Group Ride</h3>
+                        <p class="card-description">Join our weekly cycling group for a scenic ride through the countryside.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Sunday, 7:00 AM</span>
+                            <span class="tag">📍 Bike Trail</span>
+                            <span class="tag">👥 7 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="card-image social-image"></div>
+                    <div class="card-content">
+                        <div class="card-category social">Social</div>
+                        <h3 class="card-title">Game Night</h3>
+                        <p class="card-description">Board games, card games, and fun! Bring your favorite game or try something new.</p>
+                        <div class="card-tags">
+                            <span class="tag">📅 Friday, 7:00 PM</span>
+                            <span class="tag">📍 Community Hall</span>
+                            <span class="tag">👥 15 spots left</span>
+                            <button class="tag tag-participate">Participă</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more-wrapper">
+                <button class="btn btn-show-more" id="showMoreBtn">Show more</button>
             </div>
         </div>
-    </footer>
-    <script th:src="@{/js/home.js}"></script>
+    </section>
+
+    <!-- Create Activity Section (Placeholder) -->
+    <section class="create-section" id="create">
+        <div class="container">
+            <h2 class="section-title">Create Your Activity</h2>
+            <p class="section-subtitle">Share your passion with the community</p>
+            <div class="create-placeholder">
+                <p>Activity creation form coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Create Activity Button -->
+    <button class="floating-btn" id="floatingBtn" onclick="scrollToSection('create')" aria-label="Create Activity">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+    <script th:src="@{/js/script.js}"></script>
 </body>
 </html>
-
 

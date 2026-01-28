@@ -10,6 +10,26 @@ public class HomeController {
 	public String home() {
 		return "index";
 	}
+
+	@GetMapping("/create-activity")
+	public String createActivity() {
+		return "create-activity";
+	}
+
+	@GetMapping("/activities")
+	public String activities() {
+		return "activities";
+	}
+
+	@GetMapping("/profile")
+	public String profile() {
+		return "profile";
+	}
+
+	@GetMapping("/calendar")
+	public String calendar() {
+		return "calendar";
+	}
 }
 
 
