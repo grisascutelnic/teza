@@ -412,30 +412,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add scroll-triggered animations (optimized)
-let lastScrollTop = 0;
-let ticking = false;
-const navbar = document.querySelector('.navbar');
+// Navbar stays fixed; no hide/show on scroll.
 
-function updateNavbar() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop && scrollTop > 100) {
-        navbar.style.transform = 'translate3d(0, -100%, 0)';
-    } else {
-        navbar.style.transform = 'translate3d(0, 0, 0)';
-    }
-    
-    lastScrollTop = scrollTop;
-    ticking = false;
+// Mark active nav link based on current path.
+const navLinks = document.querySelectorAll('.nav-link[href]');
+if (navLinks.length) {
+    const normalize = (value) => value.replace(/\/+$/, '') || '/';
+    const currentPath = normalize(window.location.pathname);
+    navLinks.forEach((link) => {
+        if (!link.href) {
+            return;
+        }
+        const linkPath = normalize(new URL(link.href, window.location.origin).pathname);
+        if (linkPath === '/' || linkPath.startsWith('#')) {
+            return;
+        }
+        if (linkPath === currentPath || (linkPath !== '/' && currentPath.startsWith(linkPath))) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
+    });
 }
 
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(updateNavbar);
-        ticking = true;
-    }
-}, { passive: true });
-
-navbar.style.transition = 'transform 0.3s ease-in-out';
+// Index background picker removed (temporary UI deleted).
 
